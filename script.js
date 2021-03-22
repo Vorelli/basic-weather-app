@@ -20,7 +20,6 @@ form.onsubmit = function(event) {
 
 function processWeatherJSON (weatherJSON) {
   weatherInfo = {};
-  console.log(weatherJSON.weather[0]);
   weatherInfo.temperatureF = Math.floor((weatherJSON.main.temp - 273.15) * (9/5) + 32);// + 'ºF';
   weatherInfo.weather = weatherJSON.weather[0].main;
   weatherInfo.name = weatherJSON.name;
@@ -32,7 +31,6 @@ function processWeatherJSON (weatherJSON) {
 }
 
 function displayWeather() {
-  console.log('displaying');
   document.querySelector('.weatherTemp').textContent = weatherInfo.temperatureF + '°F';
   document.querySelector('.weatherLocation').textContent = weatherInfo.name;
   document.querySelector('.weather').textContent = weatherInfo.weather;
