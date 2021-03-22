@@ -51,6 +51,7 @@ table {
   margin: 20px auto;
   width: 800px;
   text-align: center;
+  background-color: #f1f1f1
 }
 
 .weatherInfo>div {
@@ -58,6 +59,7 @@ table {
 }
 
 .weatherInfo img {
+  background-color: #e5e5e5;
   padding: 0px;
   width: 200px;
   height: 200px;
@@ -66,4 +68,5 @@ table {
 
 img[src=""] {
   content:url("data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
+  background-color: #f1f1f1
 }
