@@ -1,12 +1,13 @@
 const form = document.querySelector('form');
 const apiKey = '84265e61a5d2ab466a0e7436f38ec9b9';
 let weatherInfo;
+const s = window.location.protocol=='https:' ? 's' : '';
 
 form.onsubmit = function(event) {
   event.preventDefault();
   const location = event.target.firstElementChild.value;
 
-  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`, {mode: 'cors'}).then(res => res.json()).then(res => processWeatherJSON(res)).catch((err => {
+  fetch(`http${s}://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`, {mode: 'cors'}).then(res => res.json()).then(res => processWeatherJSON(res)).catch((err => {
     document.querySelector('.weatherLocation').textContent = 'Failed. Try again.';
     document.querySelector('.weather').textContent = 'Failed. Try again.';
     document.querySelector('.weatherTemp').textContent = 'Failed. Try again.';
